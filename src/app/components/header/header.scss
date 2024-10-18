@@ -1,4 +1,7 @@
 #header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
   #nav {
     display: flex;
     .btn-home {
@@ -66,5 +69,8 @@
         }
       }
     }
+  }
+
+  .logo-l {
   }
 }

@@ -47,11 +47,13 @@ export default function RootLayout({
           { "--fontMain": londrinaSolid.style.fontFamily } as CSSProperties
         }
       >
-        <div className="bg-star dc"></div>
-        <div className="bg-gradient dc"></div>
-        <img src="de/rainbow.png" className="decor_horizon-rainbow dc"></img>
-        <img src="de/bg-planet-bt.png" className="decor_planet-bt dc"></img>
-        <img src="de/bg-planet-t.png" className="decor_planet-t dc"></img>
+        <div className="others">
+          <div className="bg-star dc"></div>
+          <div className="bg-gradient dc"></div>
+          <img src="de/rainbow.png" className="decor_horizon-rainbow dc"></img>
+          <img src="de/bg-planet-bt.png" className="decor_planet-bt dc"></img>
+          <img src="de/bg-planet-t.png" className="decor_planet-t dc"></img>
+        </div>
         <Header />
         {children}
       </body>

@@ -1,14 +1,20 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import "./header.scss";
+import { usePathname } from "next/navigation";
 type Props = {};
 
 export default function Header({}: Props) {
+  const pathname = usePathname();
+
   return (
     <header id="header">
       <nav id="nav">
         <Link href={"/"} className="btn btn-home">
-          <img src="/gfx/btn_home.png" alt="" className="ufo" />
+          {pathname !== "/" && (
+            <img src="/gfx/btn_home.png" alt="" className="ufo" />
+          )}
           <img src="/de/header-blob.png" alt="" className="blob" />
         </Link>
         <div className="socials">
@@ -49,6 +55,12 @@ export default function Header({}: Props) {
           </p>
         </div>
       </nav>
+
+      <div className="logo-l">
+        {pathname !== "/" && (
+          <img src="/gfx/logo_sm.png" alt="" className="header_logo" />
+        )}
+      </div>
     </header>
   );
 }

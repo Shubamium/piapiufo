@@ -1,3 +1,8 @@
 export default function Home() {
-  return <div className={""}></div>;
+  return (
+    <main className={"page_home"}>
+      {" "}
+      <p>a</p>
+    </main>
+  );
 }

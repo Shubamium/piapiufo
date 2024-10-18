@@ -5,10 +5,88 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: black;
+  position: relative;
+  font-family: var(--fontMain);
+}
+
+.bg-star {
+  background: url("/bg/star_bg.png");
+  animation: starmove 85s infinite linear, blink 5s ease-in-out infinite;
+  position: fixed;
+  z-index: -100;
+  height: 100vh;
+  width: 100vw;
+}
+
+.bg-gradient {
+  background: linear-gradient(
+    178deg,
+    #48269600 0%,
+    #48269641 30%,
+    rgb(1, 234, 199) 89%
+  );
+  position: fixed;
+  top: 12vh;
+  z-index: -95;
+  height: 100vh;
+  width: 100vw;
+}
+.decor_horizon-rainbow {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  width: max(1500px, 150vw);
+  filter: blur(5vh);
+  opacity: 1;
+  rotate: 2deg;
+}
+.decor_planet-bt {
+  position: fixed;
+  left: -15vw;
+  width: 40vw;
+  bottom: -40vh;
+  filter: blur(50px);
+  scale: 1.6;
+}
+.decor_planet-t {
+  position: fixed;
+  top: 0%;
+  max-width: 60%;
+  right: 0%;
+}
+// Disable click
+.dc {
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes starmove {
+  from {
+    background-position: 0px 0px;
+  }
+  50% {
+  }
+  to {
+    background-position: -1500px 5000px;
+  }
 }
 
 * {
@@ -20,4 +98,28 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+  text-decoration: none;
+  color: black;
+}
+.btn {
+  cursor: pointer;
+  transition: all 200ms ease;
+  &:hover {
+    scale: 1.05;
+  }
+  &:active {
+    scale: 0.95;
+  }
+}
+
+main {
+  min-height: 80vh;
+  margin-top: 1em;
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Londrina_Solid } from "next/font/google";
 import "./globals.scss";
 import { CSSProperties } from "react";
+import Header from "./components/header/Header";
 
 const londrinaSolid = Londrina_Solid({
   weight: ["100", "300", "400", "900"],
@@ -46,6 +47,12 @@ export default function RootLayout({
           { "--fontMain": londrinaSolid.style.fontFamily } as CSSProperties
         }
       >
+        <div className="bg-star dc"></div>
+        <div className="bg-gradient dc"></div>
+        <img src="de/rainbow.png" className="decor_horizon-rainbow dc"></img>
+        <img src="de/bg-planet-bt.png" className="decor_planet-bt dc"></img>
+        <img src="de/bg-planet-t.png" className="decor_planet-t dc"></img>
+        <Header />
         {children}
       </body>
     </html>

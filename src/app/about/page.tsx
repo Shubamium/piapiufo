@@ -75,7 +75,13 @@ export default function WatchPage({}: Props) {
               </div>
             </div>
             <div className="facts-ref">
-              <button className="btn btn-primary">Reference Sheet</button>
+              <a
+                href="https://ibb.co.com/FsQy2W7"
+                target="_blank"
+                className="btn btn-primary"
+              >
+                Reference Sheet
+              </a>
             </div>
           </div>
           <div className="self-intro panel">

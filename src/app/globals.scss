@@ -53,6 +53,12 @@ body {
   display: flex;
   align-items: center;
   gap: 0.2em;
+  filter: brightness(90%);
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+    filter: brightness(100%);
+  }
 }
 @keyframes speen {
   from {

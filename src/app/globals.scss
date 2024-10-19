@@ -131,6 +131,15 @@ body {
   }
 }
 
+@keyframes breathe {
+  from {
+    scale: 0.9;
+  }
+  to {
+    scale: 1.1;
+  }
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -178,4 +187,12 @@ main {
 }
 
 body {
+}
+
+.main-h {
+  font-size: 4rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

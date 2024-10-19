@@ -1,0 +1,196 @@
+#page_about {
+  margin-top: -100px;
+  padding-bottom: 120px;
+  .confine {
+    max-width: min(1300px, 90%);
+    margin: 0 auto;
+  }
+  #about_intro {
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    figure {
+      position: relative;
+      scale: 1.1;
+      z-index: 1;
+      img {
+        animation: breathe 2s infinite alternate-reverse ease-in-out;
+      }
+    }
+    .intro_panel {
+      margin-left: -4em;
+      margin-right: 40%;
+      background: url("/bg/zigzag.png"),
+        linear-gradient(#000000 100%, #00000011 0%);
+      padding: 2em;
+      padding-right: 4em;
+      padding-left: 100px;
+      outline: 4px solid #89ffaa;
+      min-width: 50%;
+      border-radius: 0.55em;
+      h2 {
+        font-size: 2rem;
+        font-weight: normal;
+        margin-bottom: 0.5em;
+      }
+      p {
+        font-weight: 300;
+        font-size: 1.2rem;
+        .name {
+          color: #d060ec;
+        }
+        .gold {
+          color: #fff615;
+        }
+      }
+      .smoll {
+        font-size: 0.9rem;
+        margin: 1em 0;
+
+        font-weight: 500;
+        opacity: 0.8;
+      }
+      position: relative;
+      .decor_dialogue {
+        position: absolute;
+        transform: translateX(100%);
+        right: 3px;
+        bottom: 14%;
+      }
+    }
+    // max-width: 800px;
+  }
+
+  #about_general {
+    background: url("/bg/pt_scraggle.png"), #243f688a;
+    backdrop-filter: blur(6px);
+    padding: 2em;
+    display: grid;
+    grid-template-columns: 1.5fr 1.2fr 400px;
+    gap: 2em;
+    outline: 4px solid #89ffaa;
+    border-radius: 2em;
+    margin: 0 auto;
+    .panel {
+      background: linear-gradient(#191e22, #224241);
+      outline: 4px solid #89ffaa;
+      border-radius: 0.25em;
+      box-shadow: 0px 0px 4px 4px black;
+      padding: 1em;
+    }
+    .facts {
+      border-radius: 0.5em;
+      // padding-top: 2em;
+      margin-top: 60px;
+      .banner {
+        margin-top: -70px;
+        position: relative;
+        object-fit: cover;
+        padding: 0;
+        &:hover {
+          img {
+            background-position: 10% 50%;
+          }
+        }
+        img {
+          border-radius: 2em;
+          outline: 4px solid #89ffaa;
+          background: #191e22;
+          width: 100%;
+          background-position: 50% 20%;
+          height: 100%;
+
+          max-height: 100px;
+          object-fit: cover;
+        }
+      }
+      .facts-h {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+        padding: 1em 0;
+        h3 {
+          white-space: nowrap;
+          font-size: 2rem;
+        }
+        .decor_star {
+          width: 20px;
+          height: 20px;
+          margin: -1em 0;
+        }
+        hr {
+          width: 100%;
+          height: 5px;
+          background: #89ffaa;
+        }
+      }
+      .facts-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5em;
+        .item {
+          background: linear-gradient(to right, #98f297, #43cdba, #f69ee6);
+          border-radius: 0.25em;
+          color: #1d2b35;
+          box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.192);
+          padding: 0.5em;
+          transition: all 250ms cubic-bezier(0.22, 1, 0.36, 1);
+          &:hover {
+            scale: 1.05;
+          }
+          h4 {
+            font-weight: lighter;
+            font-size: 0.9rem;
+          }
+          p {
+            font-weight: bold;
+            font-size: 1.3rem;
+          }
+        }
+      }
+      .facts-ref {
+        display: flex;
+        .btn-primary {
+          width: 100%;
+          margin: 0.5em 0;
+          font-size: 1.5rem;
+          text-align: center;
+          display: flex;
+          // align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    .self-intro {
+      padding: 3em;
+      border-radius: 2em;
+      line-height: 1.4;
+      font-size: 0.9rem;
+      p {
+        font-weight: 300;
+        padding-bottom: 1em;
+        strong {
+          opacity: 1;
+        }
+      }
+    }
+    .giant-art {
+      position: relative;
+      .about-pia {
+        position: absolute;
+        bottom: -20%;
+        right: 10px;
+        width: 500px;
+        transition: all 500ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      &:hover {
+        .about-pia {
+          transform: translateY(-10%);
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,14 @@
 import React from "react";
 import "./contact.scss";
 import { FaCopy } from "react-icons/fa";
+import { fetchData } from "../db/db";
+import EmailCopy from "./EmailCopy";
 type Props = {};
 
-export default function ContactPage({}: Props) {
+export default async function ContactPage({}: Props) {
+  const general = await fetchData<any>(`
+		*[_type == 'general' && preset == 'main']{...}[0]
+	`);
   return (
     <main id="page_contact">
       <div className="confine">
@@ -90,30 +95,30 @@ export default function ContactPage({}: Props) {
               professionally. Looking forward to working with you!
             </p>
           </article>
-          <div className="planet-stat">
-            <div className="stat">
-              <div className="planet"></div>
-              <h2 className="white-b">15.2K</h2>
-              <p className="white-b">YOUTUBE</p>
+          {general.stats && (
+            <div className="planet-stat">
+              <div className="stat">
+                <div className="planet"></div>
+                <h2 className="white-b">{general.stats.youtube}</h2>
+                <p className="white-b">YOUTUBE</p>
+              </div>
+              <div className="stat">
+                <div className="planet"></div>
+                <h2 className="white-b">{general.stats.twitch}</h2>
+                <p className="white-b">TWITCH</p>
+              </div>
+              <div className="stat">
+                <div className="planet"></div>
+                <h2 className="white-b">{general.stats.tiktok}</h2>
+                <p className="white-b">TIKTOK</p>
+              </div>
             </div>
-            <div className="stat">
-              <div className="planet"></div>
-              <h2 className="white-b">15.2K</h2>
-              <p className="white-b">YOUTUBE</p>
-            </div>
-            <div className="stat">
-              <div className="planet"></div>
-              <h2 className="white-b">15.2K</h2>
-              <p className="white-b">YOUTUBE</p>
-            </div>
-          </div>
+          )}
           <div className="contact-action">
             <a href="mailto:PiaPiUFO@gmail.com" className="btn btn-primary">
               Email Me!
             </a>
-            <p className="mail btn">
-              PiaPiUFO@gmail.com <FaCopy />
-            </p>
+            <EmailCopy />
           </div>
         </section>
         <figure id="contact-art">

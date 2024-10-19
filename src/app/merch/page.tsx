@@ -3,9 +3,19 @@ import "./merch.scss";
 import { BiCopy } from "react-icons/bi";
 import { PiCopyFill } from "react-icons/pi";
 import MerchList from "./merchList/MerchList";
+import { fetchData } from "../db/db";
+import CodeCopy from "./CodeCopy";
+import { generateKey } from "crypto";
 type Props = {};
 
-export default function MerchPage({}: Props) {
+export default async function MerchPage({}: Props) {
+  const merch = await fetchData<any[]>(`
+		*[_type == 'merch']{...}
+	`);
+  const general = await fetchData<any>(`
+		*[_type == 'general' && preset == 'main']{...}[0]
+	`);
+  console.log(general);
   return (
     <main id="merch_page">
       <section id="merch-h">
@@ -28,16 +38,7 @@ export default function MerchPage({}: Props) {
           <p>Some description text here</p>
         </div>
         <div className="other">
-          <div className="code">
-            <div className="l">
-              <p> Sponsor Code:</p> <strong>SLIME</strong>
-            </div>
-            <div className="r">
-              <button className="btn btn-copy">
-                <PiCopyFill />
-              </button>
-            </div>
-          </div>
+          <CodeCopy code={general.code} />
           <div className="merchsites">
             <a href="#" target="_blank" className="btn btn-primary btn-merch">
               Throne
@@ -52,7 +53,7 @@ export default function MerchPage({}: Props) {
         </div>
       </section>
 
-      <MerchList />
+      <MerchList merchList={merch} />
     </main>
   );
 }

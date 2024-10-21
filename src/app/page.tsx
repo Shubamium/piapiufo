@@ -34,6 +34,7 @@ export default function Home() {
             }}
           />
         </figure>
+        <img src="/de/crescent.png" alt="" className="decor_crescent dc" />
         <nav id="main_nav">
           <Link href={"/watch"} className="btn nav-planet">
             <div className="planet"></div>

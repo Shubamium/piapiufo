@@ -72,6 +72,9 @@ export default async function ContactPage({}: Props) {
             </h1>
           </div>
           <article>
+            <img src="/de/goop_a.png" alt="" className="decor goop" />
+            <img src="/de/star_sm.png" alt="" className="decor star" />
+            <img src="/de/saturn.png" alt="" className="decor saturn" />
             <p>
               <span className="big">I'm Pia,</span> a variety focused content
               creator and VTuber that has been making content for over 3 years.

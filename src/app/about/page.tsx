@@ -33,7 +33,10 @@ export default function WatchPage({}: Props) {
             <img src="/gfx/chibipi_a.png" alt="" />
           </figure>
           <article className="intro_panel">
-            <h2>Ohappi, Konnpi Earthlings! </h2>
+            <h2>
+              Ohappi, Konnpi Earthlings!{" "}
+              <img src="/de/starset.png" alt="" className="decor_star" />
+            </h2>
             <p>
               My names <span className="name">PiaPiUFO</span>, Bratty Slime
               Alien VTuber with a heart of <span className="gold">gold</span>{" "}
@@ -44,10 +47,17 @@ export default function WatchPage({}: Props) {
             <img src="/de/dialogue-bar.svg" alt="" className="decor_dialogue" />
           </article>
         </section>
+        <div className="goops">
+          <img src="/de/goop_a.png" alt="" className="decor_goop b" />
+          <img src="/de/goop_a.png" alt="" className="decor_goop a" />
+          <img src="/de/saturn.png" alt="" className="decor_saturn" />
+        </div>
         <section id="about_general">
           <div className="facts panel">
             <div className="banner">
+              <img src="/de/star_sm.png" alt="" className="decor_star l" />
               <img src="/gfx/fact-banner.png" alt="" className="fact-banner" />
+              <img src="/de/star_sm.png" alt="" className="decor_star r" />
             </div>
             <div className="facts-h">
               <hr />
@@ -59,19 +69,20 @@ export default function WatchPage({}: Props) {
             <div className="facts-list">
               <div className="item">
                 <h4>Birthday</h4>
+                <p>7/7</p>
+              </div>
+              <div className="item">
+                <h4>Likes</h4>
                 <p>Pickles, UFOs, Boba</p>
               </div>
               <div className="item">
-                <h4>Birthday</h4>
-                <p>Pickles, UFOs, Boba</p>
+                <h4>Height</h4>
+                <p>153cm</p>
               </div>
-              <div className="item">
-                <h4>Birthday</h4>
-                <p>Pickles, UFOs, Boba</p>
-              </div>
-              <div className="item">
-                <h4>Birthday</h4>
-                <p>Pickles, UFOs, Boba</p>
+              <div className="item p">
+                <h4>Fan Name</h4>
+                <p>PiaPickles</p>
+                <img src="/de/minipickle.png" alt="" className="decor_p" />
               </div>
             </div>
             <div className="facts-ref">
@@ -102,6 +113,8 @@ export default function WatchPage({}: Props) {
             <p>
               <strong>Most of all, Stay Happi~!</strong>
             </p>
+            <img src="/de/star_sm.png" alt="" className="decor_star" />
+            <img src="/de/chibipi_c.png" alt="" className="decor_chibi" />
           </div>
           <div className="giant-art">
             <img src="/gfx/aboutpia.png" alt="" className="about-pia" />

@@ -28,6 +28,8 @@ export default function MerchList({ merchList }: Props) {
   };
   return (
     <section id="merch-list">
+      <img src="/gfx/merch_r.png" alt="" className="decor_merch l" />
+      <img src="/gfx/merch_l.png" alt="" className="decor_merch r" />
       <div className="confine">
         {visibleMerch[page].map((merch: any) => {
           return (

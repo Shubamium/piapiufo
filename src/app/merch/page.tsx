@@ -1,11 +1,8 @@
 import React from "react";
 import "./merch.scss";
-import { BiCopy } from "react-icons/bi";
-import { PiCopyFill } from "react-icons/pi";
 import MerchList from "./merchList/MerchList";
 import { fetchData } from "../db/db";
 import CodeCopy from "./CodeCopy";
-import { generateKey } from "crypto";
 type Props = {};
 
 export default async function MerchPage({}: Props) {
@@ -22,6 +19,7 @@ export default async function MerchPage({}: Props) {
         <div className="heading">
           <h1 className="main-h">
             MERCH
+            <img src="/de/saturn.png" alt="" className="decor_sat" />
             <svg
               width="95"
               height="89"

@@ -20,6 +20,18 @@
         font-weight: 300;
         margin-left: 1em;
       }
+      .main-h {
+        position: relative;
+        img {
+          position: absolute;
+          top: 80%;
+          width: 200px;
+          filter: hue-rotate(40deg);
+          left: -50%;
+          z-index: -2;
+          rotate: 30deg;
+        }
+      }
     }
     .other {
       display: flex;
@@ -30,7 +42,7 @@
         display: flex;
         justify-content: space-between;
         padding: 0.5em;
-        border-radius: 1em;
+        border-radius: 0 1em 0 1em;
         outline: 4px solid #9df39c;
         box-shadow: 0px 0px 24px 14px #9df39c50;
         font-size: 1.5rem;
@@ -73,10 +85,27 @@
   }
 
   #merch-list {
-    background: #243f68;
+    background: url("/bg/pt_scraggle.png"), #243f68af;
+    backdrop-filter: blur(5px);
     margin: 1em 0;
     border-top: 3px solid #9df39c;
+    overflow: hidden;
     border-bottom: 3px solid #9df39c;
+    .decor_merch {
+      position: absolute;
+      // width: 100%;
+      opacity: 0.5;
+      scale: 1.4;
+      height: 100%;
+      z-index: -2;
+      &.l {
+        left: 2%;
+      }
+      &.r {
+        right: 0%;
+      }
+    }
+
     .confine {
       max-width: min(1250px, 80%);
       margin: 0 auto;
@@ -88,6 +117,7 @@
     .merch {
       // flex-direction: column/;
       width: 280px;
+      margin-top: 1em;
       &:hover {
         scale: 1.05;
         .display {
@@ -101,6 +131,7 @@
       .info {
         transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
+        border-radius: 1em 0 0 1em;
         background: url("/bg/zigzag.png"), #9160d6;
         background-size: 15px;
         width: 100%;
@@ -170,6 +201,7 @@
           height: 250px;
           object-fit: cover;
           object-position: center;
+          border-radius: 2em 0 2em 0;
         }
       }
     }
@@ -187,7 +219,15 @@
       .btn-primary {
         padding: 0em 0.25em;
         border-bottom-width: 6px;
+        outline-width: 4px;
         border-top-width: 6px;
+
+        &:first-of-type {
+          border-radius: 1em 0 0 1em;
+        }
+        &:nth-of-type(2) {
+          border-radius: 0 1em 1em 0;
+        }
       }
     }
   }

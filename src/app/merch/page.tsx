@@ -38,14 +38,26 @@ export default async function MerchPage({}: Props) {
         <div className="other">
           <CodeCopy code={general.code} />
           <div className="merchsites">
-            <a href="#" target="_blank" className="btn btn-primary btn-merch">
+            <a
+              href="https://throne.com/piapiufo"
+              target="_blank"
+              className="btn btn-primary btn-merch"
+            >
               Throne
             </a>
-            <a href="#" target="_blank" className="btn btn-primary btn-merch">
-              Merch A
+            <a
+              href="https://studionekomata.com/products/piapiufo-pickle-jar-enamel-pin?_pos=1&_sid=664e4a764&_ss=r"
+              target="_blank"
+              className="btn btn-primary btn-merch"
+            >
+              Studio Nekomata
             </a>
-            <a href="#" target="_blank" className="btn btn-primary btn-merch">
-              Merch B
+            <a
+              href="https://merch.kawaentertainment.com/en-jp/search?q=piapi&options%5Bprefix%5D=last"
+              target="_blank"
+              className="btn btn-primary btn-merch"
+            >
+              Kawa Entertainment
             </a>
           </div>
         </div>

@@ -185,10 +185,16 @@ export default function Home() {
           </Link>
         </nav>
         <div className="cta">
-          <button className="btn btn-primary">
+          <a
+            href="https://www.twitch.tv/piapiufo"
+            target="_blank"
+            className="btn btn-primary"
+          >
             Watch Pia <GiPlayButton />{" "}
-          </button>
-          <button className="btn btn-primary">Say Hi!</button>
+          </a>
+          <Link href={"/contact"} className="btn btn-primary">
+            Say Hi!
+          </Link>
         </div>
       </section>
       {/* <div className="blabla"></div> */}

@@ -35,19 +35,20 @@
     }
     .other {
       display: flex;
-      max-width: 50%;
+      max-width: 70%;
       flex-direction: column;
       .code {
         background: #243f68;
         display: flex;
         justify-content: space-between;
+        letter-spacing: 2px;
         padding: 0.5em;
         border-radius: 0 1em 0 1em;
         outline: 4px solid #9df39c;
         box-shadow: 0px 0px 24px 14px #9df39c50;
-        font-size: 1.5rem;
+        font-size: 1.9rem;
         align-items: center;
-        margin: 1em 0;
+        margin: 0.5em 0;
         .l {
           display: flex;
           gap: 0.25em;
@@ -77,6 +78,7 @@
         gap: 1em;
         .btn-primary {
           font-size: 1.4rem;
+          padding-inline: 1em;
           border-bottom-width: 5px;
           border-top-width: 5px;
         }

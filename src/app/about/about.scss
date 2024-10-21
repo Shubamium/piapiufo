@@ -5,6 +5,10 @@
     max-width: min(1300px, 90%);
     margin: 0 auto;
   }
+  @media screen and (max-width: 550px) {
+    max-width: 100%;
+    overflow: hidden;
+  }
   #about_intro {
     margin-top: -40px;
     display: flex;
@@ -68,6 +72,41 @@
         bottom: 14%;
       }
     }
+
+    @media screen and (max-width: 1024px) {
+      margin-top: 50px;
+      figure {
+        display: none;
+        img {
+          width: 200px;
+        }
+      }
+      .intro_panel {
+        padding: 1em;
+        padding-left: 5em;
+      }
+    }
+    @media screen and (max-width: 550px) {
+      .intro_panel {
+        transform: translateX(10%);
+        h2 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+    @media screen and (max-width: 420px) {
+      .intro_panel {
+        h2 {
+          font-size: 1.4rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
     // max-width: 800px;
   }
   .goops {
@@ -111,6 +150,12 @@
     outline: 4px solid #89ffaa;
     border-radius: 2em;
     margin: 0 auto;
+
+    @media screen and (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      margin-top: 100px;
+    }
     .panel {
       background: linear-gradient(#191e22, #224241);
       outline: 4px solid #89ffaa;
@@ -118,6 +163,18 @@
       box-shadow: 0px 0px 4px 4px black;
       padding: 1em;
       letter-spacing: 1px;
+    }
+
+    @media screen and (max-width: 5250px) {
+      padding: 1em 0;
+
+      .panel {
+        border-radius: 0em !important;
+        outline: none;
+        filter: none;
+        box-shadow: none;
+        border-radius: 0;
+      }
     }
     .facts {
       border-radius: 0.5em;
@@ -186,6 +243,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.5em;
+        @media screen and (max-width: 420px) {
+          display: flex;
+          flex-direction: column;
+        }
         .item {
           background: linear-gradient(to right, #98f297, #43cdba, #f69ee6);
           border-radius: 0.25em;
@@ -235,6 +296,9 @@
       }
     }
 
+    @media screen and (max-width: 1024px) {
+      position: initial;
+    }
     .self-intro {
       padding: 3em;
       border-radius: 2em;
@@ -272,6 +336,26 @@
     }
     .giant-art {
       position: relative;
+      @media screen and (max-width: 1024px) {
+        z-index: -100;
+        top: -550px;
+        right: -150px;
+      }
+      @media screen and (max-width: 550px) {
+        scale: 0.78;
+        transform: translateY(-50px);
+      }
+
+      @media screen and (max-width: 420px) {
+        scale: 0.58;
+        transform: translateY(-500px) translateX(50px);
+      }
+      @media screen and (max-width: 320px) {
+        top: -1200px;
+        right: -200px;
+        transform: none;
+        scale: 0.53;
+      }
       .about-pia {
         position: absolute;
         bottom: -20%;

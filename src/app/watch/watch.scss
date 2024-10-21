@@ -10,18 +10,36 @@
     // background: red;
     display: grid;
     grid-template-columns: 400px 1fr;
+    @media screen and (max-width: 1024px) {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      max-width: 80%;
+    }
+
     figure {
       position: relative;
       .art {
-        position: absolute;
-        right: -20%;
-        bottom: -10%;
-        max-width: 600px;
-        z-index: -2;
-        animation: breathe 4s infinite alternate-reverse ease-in-out;
+        @media screen and (min-width: 1024px) {
+          position: absolute;
+          right: -20%;
+          bottom: -10%;
+          max-width: 600px;
+          z-index: -2;
+          animation: breathe 4s infinite alternate-reverse ease-in-out;
+        }
+        @media screen and (max-width: 1024px) {
+          max-width: 100%;
+          max-height: 500px;
+          margin: 0 auto;
+        }
       }
     }
     .watch-c {
+      @media screen and (max-width: 1024px) {
+        max-width: 90%;
+        margin-top: -50px;
+      }
       .watch-h {
         text-align: left;
         margin: 1em 0;
@@ -35,6 +53,11 @@
           letter-spacing: 1px;
           font-weight: 300;
           font-size: 1.2rem;
+          @media screen and (max-width: 550px) {
+            font-size: 1rem;
+            line-height: 1.4;
+            font-weight: 200;
+          }
         }
         text-shadow: 0px 0px 4px black;
         .btn-primary {
@@ -47,6 +70,22 @@
         .btn-primary {
           font-size: 1.3rem;
           letter-spacing: 1px;
+        }
+        @media screen and (max-width: 768px) {
+          gap: 0.5em;
+          .btn-primary {
+            padding: 0.25em 1em;
+          }
+        }
+        @media screen and (max-width: 476px) {
+          .btn-primary {
+            font-size: 1.1rem;
+          }
+        }
+        @media screen and (max-width: 420px) {
+          .btn-primary {
+            font-size: 1rem;
+          }
         }
       }
       .watch-info {
@@ -62,7 +101,13 @@
         img {
           max-width: 100%;
         }
-
+        @media screen and (max-width: 768px) {
+          gap: 2em;
+        }
+        @media screen and (max-width: 480px) {
+          display: flex;
+          flex-direction: column-reverse;
+        }
         .times {
           background: url("/bg/pt_scraggle.png"), #243f689c;
           padding: 1em;
@@ -76,6 +121,10 @@
           // margin-top: -100px;
           height: max-content;
           border-radius: 1em;
+
+          @media screen and (max-width: 480px) {
+            margin-top: 0;
+          }
           img {
             margin-top: -80px;
             max-width: 150px;
@@ -112,6 +161,14 @@
             font-weight: 300;
 
             font-size: 1.4rem;
+          }
+
+          @media screen and (max-width: 768px) {
+            h3 {
+              font-size: 2.5rem;
+            }
+            p {
+            }
           }
         }
       }

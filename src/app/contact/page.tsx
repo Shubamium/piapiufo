@@ -128,6 +128,7 @@ export default async function ContactPage({}: Props) {
           <img src="/gfx/contact-art.png" alt="" className="art dc" />
         </figure>
       </div>
+      <img src="/gfx/contact-art.png" alt="" className="art-outside dc" />
     </main>
   );
 }

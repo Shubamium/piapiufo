@@ -1,10 +1,21 @@
 #merch_page {
+  @media screen and (max-width: 550px) {
+    // overflow-x: hidden;
+  }
   #merch-h {
     max-width: min(90%, 1100px);
     margin: 0 auto;
     margin-top: -50px;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    @media screen and (max-width: 550px) {
+      max-width: 80%;
+    }
     .main-h {
       text-shadow: 0px 0px 4px #243f68;
       gap: 0.3em;
@@ -37,6 +48,9 @@
       display: flex;
       max-width: 70%;
       flex-direction: column;
+      @media screen and (max-width: 768px) {
+        max-width: 100%;
+      }
       .code {
         background: #243f68;
         display: flex;
@@ -49,6 +63,29 @@
         font-size: 1.9rem;
         align-items: center;
         margin: 0.5em 0;
+
+        @media screen and (max-width: 1024px) {
+          .r .btn-copy {
+            width: 20px;
+            height: 20px;
+          }
+          padding: 0.25em;
+          border-radius: 0.25em;
+          outline-width: 2px;
+        }
+        @media screen and (max-width: 550px) {
+          .l {
+            align-items: center;
+            flex-direction: column;
+            p {
+              font-size: 0.7rem;
+            }
+            strong {
+              margin: 0;
+            }
+          }
+        }
+
         .l {
           display: flex;
           gap: 0.25em;
@@ -76,11 +113,22 @@
       .merchsites {
         display: flex;
         gap: 1em;
+        justify-content: center;
         .btn-primary {
           font-size: 1.4rem;
           padding-inline: 1em;
           border-bottom-width: 5px;
           border-top-width: 5px;
+          @media screen and (max-width: 550px) {
+            font-size: 1.1rem;
+            padding-inline: 0.5em;
+            border-bottom-width: 3px;
+            border-top-width: 3px;
+          }
+        }
+        @media screen and (max-width: 420px) {
+          display: flex;
+          flex-direction: column;
         }
       }
     }
@@ -93,6 +141,9 @@
     border-top: 3px solid #9df39c;
     overflow: hidden;
     border-bottom: 3px solid #9df39c;
+    @media screen and (max-width: 550px) {
+      overflow-x: hidden;
+    }
     .decor_merch {
       position: absolute;
       // width: 100%;
@@ -102,6 +153,9 @@
       z-index: -2;
       &.l {
         left: 2%;
+        @media screen and (max-width: 550px) {
+          display: none;
+        }
       }
       &.r {
         right: 0%;
@@ -114,12 +168,31 @@
       display: flex;
       gap: 1.8em;
       margin-top: 2em;
+      @media screen and (max-width: 1280px) {
+        gap: 1em;
+      }
+      @media screen and (max-width: 1024px) {
+        gap: 2em;
+        flex-direction: column;
+      }
     }
 
     .merch {
       // flex-direction: column/;
       width: 280px;
       margin-top: 1em;
+      @media screen and (max-width: 1280px) {
+        width: 220px;
+      }
+
+      @media screen and (max-width: 1024px) {
+        width: 100%;
+        display: flex;
+        gap: 1em;
+      }
+      @media screen and (max-width: 420px) {
+        flex-direction: column;
+      }
       &:hover {
         scale: 1.05;
         .display {
@@ -149,10 +222,22 @@
           margin-bottom: 1em;
           min-height: 60px;
         }
-
+        @media screen and (max-width: 420px) {
+          .info-main p {
+            display: none;
+          }
+        }
+        @media screen and (max-width: 1024px) {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
         .info-footer {
           display: flex;
           justify-content: space-between;
+          @media screen and (max-width: 420px) {
+            flex-direction: row-reverse;
+          }
           .price {
             font-weight: 500;
             margin-bottom: 0;
@@ -196,6 +281,11 @@
           height: 150px;
           bottom: 75%;
           object-fit: contain;
+          @media screen and (max-width: 768px) {
+            transform-origin: center;
+            bottom: 70%;
+            scale: 0.6;
+          }
         }
 
         .product-img {
@@ -204,6 +294,9 @@
           object-fit: cover;
           object-position: center;
           border-radius: 2em 0 2em 0;
+          @media screen and (max-width: 1280px) {
+            height: 200px;
+          }
         }
       }
     }

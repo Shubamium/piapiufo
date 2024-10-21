@@ -121,6 +121,7 @@ export default function WatchPage({}: Props) {
           </div>
         </section>
       </div>
+      <img src="/gfx/aboutpia.png" alt="" className="outside-art" />
     </main>
   );
 }

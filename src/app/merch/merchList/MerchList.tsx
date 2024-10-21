@@ -48,8 +48,10 @@ export default function MerchList({ merchList }: Props) {
                 />
               </div>
               <div className="info">
-                <h2>{merch.name}</h2>
-                <p>{merch.description}</p>
+                <div className="info-main">
+                  <h2>{merch.name}</h2>
+                  <p>{merch.description}</p>
+                </div>
                 <div className="info-footer">
                   <p className="price">{merch.price}</p>
                   <a href={merch.link} className="btn btn-buy">

@@ -1,0 +1,161 @@
+#loading-screen {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    to bottom,
+    #010102,
+    #183b47 50%,
+    #166665,
+    #0e8d80,
+    #06d9ba
+  );
+  z-index: 5000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h2 {
+    font-size: 4rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    svg {
+      animation: speen 1s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    gap: 1em;
+    @media screen and (max-width: 1280px) {
+      font-size: 2.5rem;
+    }
+    @media screen and (max-width: 420px) {
+      display: flex;
+    }
+  }
+  .loading {
+    transition: all 500ms ease;
+  }
+
+  &.loaded {
+    .loading {
+      opacity: 0;
+    }
+    .ufo {
+      // animation: ;
+      opacity: 0;
+      transform: translateY(-100vh);
+    }
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+  }
+  transition: all 1000ms ease;
+  transition-delay: 1000ms;
+  .loading-bar {
+    width: 40%;
+    height: 50px;
+    margin: 1em 0;
+    border-radius: 2em;
+    background: #06d9ba;
+    // margin-bottom: 30vh;
+    display: flex;
+    padding: 0.25em;
+    overflow: hidden;
+    @media screen and (max-width: 768px) {
+      height: 30px;
+      width: 70%;
+    }
+    .bar {
+      width: 70%;
+      height: 100%;
+      background: url("/bg/zigzag.png"), #00456a;
+      border-radius: 2em;
+      animation:
+        bar 0.78s infinite alternate-reverse linear,
+        bg-move 22s infinite linear;
+      position: relative;
+      @keyframes bg-move {
+        from {
+          background-position: 0px -1000px;
+        }
+        to {
+          background-position: 0px 0px;
+        }
+      }
+      @keyframes bar {
+        from {
+          left: 0%;
+        }
+        to {
+          left: 30%;
+        }
+      }
+    }
+  }
+  .ufo {
+    transition: all 2000ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .obby {
+      height: 150px;
+      animation: obby 3s infinite alternate-reverse
+        cubic-bezier(0.895, 0.03, 0.685, 0.22);
+      position: relative;
+      z-index: 2;
+    }
+    .beam {
+      position: absolute;
+      width: 30%;
+      z-index: -2;
+      top: 100px;
+      // max-width: 150px;
+      width: 750px;
+      animation:
+        obby 3s infinite alternate-reverse
+          cubic-bezier(0.895, 0.03, 0.685, 0.22),
+        beam 1.5s infinite alternate-reverse ease-out;
+    }
+    @keyframes beam {
+      from {
+        scale: 0.5 1;
+      }
+      to {
+        scale: 1.1 1;
+
+        filter: blur(3px);
+      }
+    }
+    @keyframes obby {
+      from {
+        transform: translateY(50px);
+      }
+      to {
+        transform: translateY(-50px);
+      }
+    }
+    .pickle {
+      position: absolute;
+      top: -20%;
+      scale: 0.8;
+      animation: pickle 1.2s infinite ease-out;
+      z-index: -2;
+      transform-origin: center;
+      @keyframes pickle {
+        from {
+          transform: translateY(80vh);
+        }
+        80% {
+          opacity: 0;
+        }
+        to {
+          opacity: 0;
+          scale: 0.5;
+          transform: translateY(0vh) rotate(360deg);
+        }
+      }
+    }
+  }
+}

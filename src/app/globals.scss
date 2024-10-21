@@ -6,7 +6,10 @@ body {
 }
 
 html {
-  overflow-x: hidden;
+  overflow: hidden;
+  &:has(#loading-screen.loaded) {
+    overflow: hidden auto;
+  }
 }
 
 body {

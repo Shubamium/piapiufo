@@ -5,6 +5,7 @@
   #hero_nav {
     @media screen and (max-width: 550px) {
       padding-bottom: 20vh;
+      overflow-x: hidden;
     }
     display: flex;
     justify-content: center;

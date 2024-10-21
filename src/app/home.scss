@@ -1,17 +1,46 @@
 #page_home {
   padding-top: 1em;
-  margin-top: -100px;
+  margin-top: -200px;
   min-height: 100vh;
   #hero_nav {
+    @media screen and (max-width: 550px) {
+      padding-bottom: 20vh;
+    }
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     max-width: 100vw;
+    @media screen and (max-width: 420px) {
+      margin-top: -30px;
+    }
     .cta {
       display: flex;
       gap: 1em;
       margin-top: 3em;
+      @media screen and (max-width: 1024px) {
+        .btn-primary {
+          font-size: 2rem;
+          border-top-width: 5px;
+          border-bottom-width: 5px;
+        }
+      }
+      @media screen and (max-width: 550px) {
+        .btn-primary {
+          font-size: 1.4rem;
+          outline-width: 4px;
+        }
+      }
+      @media screen and (max-width: 370px) {
+        flex-direction: column;
+        display: flex;
+        .btn-primary {
+          font-size: 2rem;
+          outline-width: 4px;
+          justify-content: start;
+          padding-inline: 1em;
+        }
+      }
     }
     figure {
       overflow: hidden;
@@ -22,6 +51,10 @@
       transform: translateY(-5%);
       position: relative;
       z-index: -2;
+      @media screen and (max-width: 550px) {
+        max-width: 100%;
+        scale: 1.5;
+      }
       .main-hero-art {
         // display: none;
         position: relative;
@@ -40,6 +73,10 @@
       z-index: -10;
       top: 13%;
       opacity: 0.5;
+
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
     }
     #main_nav {
       max-width: 800px;
@@ -54,6 +91,7 @@
 
       .btn.nav-planet {
         filter: brightness(90%);
+
         &:hover {
           filter: brightness(110%);
         }
@@ -99,49 +137,53 @@
         align-items: center;
         position: relative;
 
-        &:nth-of-type(1) {
-          animation-delay: 0ms;
-          scale: 0.8;
-          &:hover {
-            scale: 0.9;
-          }
-          &:active {
-            scale: 0.78;
-          }
-          left: -200px;
-        }
-
-        &:nth-of-type(2) {
-          scale: 0.8;
-          &:hover {
-            scale: 0.9;
-          }
-          &:active {
-            scale: 0.78;
-          }
-          animation-delay: 250ms;
-          left: 200px;
-        }
-
-        &:nth-of-type(3) {
-          animation-delay: 450ms;
-          left: -300px;
-        }
-
-        &:nth-of-type(4) {
-          left: 300px;
-          animation-delay: 100ms;
-        }
         svg {
           width: 130px;
           height: 130px;
           margin: -0.25em 0;
           padding-top: 1em;
-          &.big {
-            scale: 1.2;
+          @media screen and (min-width: 550px) {
+            &.big {
+              scale: 1.2;
+            }
+            &.smoll {
+              scale: 0.8;
+            }
           }
-          &.smoll {
+        }
+        @media screen and (min-width: 1024px) {
+          &:nth-of-type(1) {
+            animation-delay: 0ms;
             scale: 0.8;
+            &:hover {
+              scale: 0.9;
+            }
+            &:active {
+              scale: 0.78;
+            }
+            left: -200px;
+          }
+
+          &:nth-of-type(2) {
+            scale: 0.8;
+            &:hover {
+              scale: 0.9;
+            }
+            &:active {
+              scale: 0.78;
+            }
+            animation-delay: 250ms;
+            left: 200px;
+          }
+
+          &:nth-of-type(3) {
+            animation-delay: 450ms;
+            left: -300px;
+          }
+
+          &:nth-of-type(4) {
+            left: 300px;
+            animation-delay: 100ms;
           }
         }
         .white-b {
@@ -190,6 +232,21 @@
             rotate: 0deg;
           }
         }
+
+        @media screen and (max-width: 550px) {
+          width: 150px;
+          height: 150px;
+          svg {
+            transform: scale(0.5);
+            &.big {
+              scale: 1.5;
+            }
+          }
+          .white-b {
+            margin-top: -20px;
+            font-size: 1.5rem;
+          }
+        }
       }
     }
   }
@@ -199,4 +256,25 @@
   width: 200px;
   height: 2000px;
   background: red;
+}
+
+@media screen and (max-width: 1024px) {
+  #page_home {
+    margin-top: -250px;
+  }
+  #page_home #hero_nav #main_nav {
+    .nav-planet {
+      left: initial !important;
+      right: initial !important;
+    }
+  }
+  #page_home {
+    #hero_nav {
+      figure {
+        max-width: 80%;
+        margin-bottom: -400px;
+        position: relative;
+      }
+    }
+  }
 }
